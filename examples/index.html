@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examples</title>
+    <style>
+      a {
+        all: unset;
+        display: block;
+        padding: 4px;
+      }
+      a:hover,
+      a:focus {
+        cursor: pointer;
+        color: orange;
+      }
+      a:hover::after,
+      a:focus::after {
+        content: "▸";
+        font-size: 0.8em;
+        padding-left: 0.2em;
+      }
+    </style>
+    <script>
+      if (
+        !window.location.pathname.endsWith("/") &&
+        !window.location.pathname.endsWith(".html")
+      ) {
+        window.location.assign(window.location.pathname + "/")
+      }
+    </script>
+  </head>
+  <body>
+    <ul id="root"></ul>
+    <script type="module">
+      import {init, render} from "../purity.js"
+
+      const {mount} = init()
+
+      const list = [
+        ["counter/", "Counter"],
+        ["simple-todo-example/", "Simple ToDo"],
+        ["async-todo-example/", "Async ToDo"],
+        ["colored-input-example/", "Colored Input"],
+        [
+          "../playground/#JYWwDg9gTgLgBAb2AO2DANHKBTZATbKAXzgDMoIQ4ByAOloHoUCAPWgKwGdqAoHgYwjJO8BCAgBXZBjgBzbDADKMAIYxsmTguVrsJALxwUaABQJBAG2gAuGgCMLK-gGtqRAJR9Bw+AAsV+BbYAJLIYBLwhibY7nD6AHyIPHBwWkqq6iYmsQlwZpY2cNi0qlDyMLQAbioWEnrunkReQiJwAEoQEJF5OYk4+IQABslwADx4wJVGePoARBRds-EjKaMo4fDW1usR+gAkCP6BIWERJAzLKasiAJ5B03O3QZxLK1c7om9XcAVQtgflHSZdy0X5wAA+4PsjhcbgA3F84E1vqMGE9sJcxgwJpVlsMeOIpDATB0up4gA",
+          "Colored input (Playground)",
+        ],
+        ["use-state-example/", "Stateful Counters"],
+        ["async-search/", "Async Search"],
+        ["multiple-apps/", "Multiple Applications in the Same Page"],
+        ["multiple-event-handlers/", "Multiple Event Handlers on the Same Tag"],
+        ["purity-todo/", "Purity Todo (2)"],
+        ["async-counter/", "Async Counter (using makeAsync)"],
+        [
+          "../playground/#JYWwDg9gTgLgBAb2AO2DANHKBTZATbKTEAQwGtsARKEgcwF84AzKCEOAIgDouB6FAgA8uAKwDOHAFCSAxhGRj4CEBACuyDHFrYYAZRgkY2TGJ37D2RgF44KNAAoEM1VDHQAXHADktGgCMvegBKaTkFeH0ATwAbbDgbeyD4gD4sXAIoAANJODgAHkUYuOA8Kw4cMWAAL2wAWkLYjmSc3LgAYj8SaOjEFta4AHcSmAALTwBmAAYwQQBuPtaR7GBaEZgJ6bmF3M6ZMl81fE8cPHn+3OdXDzgAEgRtPQMjRK5Ltyh6M-PISphgeWO2GihmAADdsF9+qpTFB6kDsDJ1nBkPIIds4H5oBlajQ8MBoZ4AKyTACkkLg9BaeV4DWwzWysnkilsqBg1Do8TgpAo7No9kcBigD2CKV6uVMjws-KSVlSjje1x8-j8KFogSCIRaOBgLmQcEcsSYmhgEDAJkFMAAKqbzSRYAAZbBGkWysWtQUPLi0rgmsCcsB20wASQ09kUdqtNrgAEZJkkANRwAOubAhmD2X2YWMJ7wzLwLD06L0wIpcQ3wGzJ4Oh8MOp2abNwRNV1Oh8tZuNN3OCfMLbW6-Uy1IIdES8zPRKi+Uud6eJUkALBEL9Sm5SnBUJM+AAQTAfoSQ7S+EI2VyeTxoNspXKEAgMCaC3PYKvZU63Q4cHc7hU0OweAgAzIFYdx2GyNAMMk1IXs0-R3FEsSJKu+S8NBkgMj+oa7mAIRAA",
+          "Using Drag module",
+        ],
+        [
+          "../playground/#JYWwDg9gTgLgBAb2AO2DANHKBTZATbKAXzgDMoIQ4ByAOloHoUCAPWgKwGdqAoHgYwjJO8BCAgBXZBjgBzbDADKMAIYxsmTguVqNWQrgLE4AXjgo0ACgQ84duCJVRZKgF6FOAfUFSYALhoAWmpMW3sfaQCABnQwuxxITgCAbQBdWPsHbAAbbH51PAAlbEgAqQJSFGw8DPtOMBRkQgDSFWytWKIASj4GBjgAKiHhkdGx8YnJqemxvkFheH4cXQB5ZB1YUzhLLtMAPkQ4uHmRY7b2rYQiPkycGAkoZG3gGrgARwlCAE9dkwObTKZYCkbYAQn4504yReqV2AMBCIh2Xa0LwqS2MCgnyOCLsH2+Oxx9mumWu1wEQlOQg28DMS2wq3WqlghJ4fUGM05XO5PIGc0p8BWYBgwCEW2syBUID0eGAnBUACNcnhuvt9PhCAADI4AHggwtFTwAbm1PiYAEQAEgQkulRHNcGttuwphMZnkSlU6h2tC0uXy1WKkDgADIQzQ-XkCtQSNbZfKldVQ+HqPHFcqY3siXYnVLsCT7DqGPqRUIs9qKQtjgALPIAa2K9UpLrMOE4avhdmBYLbtAgdbh2bguXghCgWyaAHc4ABRKAUKCWc0ACQAKquAAoOL0SduCAgBB0Aan0nF9O84PVxcDHtDbkGELdPQ9vjnu7db2DPb93Q5g1YoacxyOAt4gUB4nl7LghEJckTngD0Ng-fRIAAOTzNVSAUfhq0sTVqxgGAwCSPoVAaWhZDQasJAVWhBBABgEggTgGC9SgvigBhrSY9C7U1K97Fof9cEsHD60bB8tAEuwhNrZBLGsRxnDcDxvEkaRVT+LJPV0BTfgORTmRcdwoC8CIYG6LppLgOi1BwvS1S0HTvR2NVDKcYzVPMgJqGCSzrNoSpJWRL4HK0pydBc-TtgQepGmaMg2i0fz+SrJjOAAVSgbItnwwjiL8UjyMo-8aLoygGF3DxWLUdjOPSgB+ThoBgEwJDAPBdDwEMwEITwwBUeQTAARiiKIK3guBFByKNxWizs4GpZkYEsdKsuyTBXK0rCYHstbsuszJZJEsT+AbL9JOwQ7BIhXbcMsMdoraQgVtvaVOHleQrKHY75PSjsh0ySbIwDIoSggLZGtoZIolSBraGdQG6m0L1sDCgyEHSzQGmQJooACTFPk0GbQaDCBLKRsD7keLJ-QKMmh26H7hPkxDmUvI4eiOO4IPVIxtWvHUQfgSm4D8PwcJUZAhutawjIUAIEBNbJPgCYXA3BohNP+UXMgi1H0Zi9WwcgbH4vxuBCfzb7r2vNmnE4SxjbJ66ES1ocDlF617e9Lo73Bzh4ZAMjLCFUtkC6UDASLYWs0ybU4IFOAAEEwDAOaAe58CaZwDUoAF3EdVlI1zDwC0KAgGBzTj22cwQaa6Z2cla7sHUwBwUuLSUzhq91+xvZR3S-bi3HCDgBqaEAbGJqDFmhAAVqQB4P5jR0EB9tHh6MlTTLU3wSCQ0Wi3b7Aa9rg+ALgBgswPhUJEIsU+7scX+GyYAzpMWXov13TrHM7WYu8446l4AnmGpZKO14T4tzsAAYRfmdA+DAb532QJAwWR89iAD4NwAd7srzXj6X+cBYGvzrJwQ+OAr6CwYMXSBCc+DiF8JYVOYAehAA",
+          "Using onStart example",
+        ],
+        ["router/", "App With Router"],
+      ]
+
+      const Item = ([path, title]) => render`
+        <li>
+          <a href="${window.location.href}${path}">
+            ${title}
+          </a>
+        </li>
+      `
+
+      mount(() => render`<ul id="root">${list.map(Item)}</ul>`)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Todo Purity App</title>
+    <style>
+      .checked {
+        color: grey;
+      }
+      li button {
+        display: none;
+      }
+      li.checked button {
+        display: initial;
+      }
+      li.highlighted {
+        background-color: yellow;
+      }
+      #spinner {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.1);
+        background-image: url(./spinner.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        display: none;
+      }
+      #spinner.visible {
+        display: initial;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

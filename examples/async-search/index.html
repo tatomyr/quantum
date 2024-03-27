@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Search</title>
+    <style>
+      input {
+        border: none;
+        border-bottom: 1px solid grey;
+        outline: none;
+        margin: 4px;
+      }
+      ul {
+        padding: 0;
+      }
+      li {
+        background: white;
+        padding: 2px;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+        list-style: none;
+      }
+      li:hover {
+        background: #f3f3f3;
+        transform: scale(1.004);
+        box-shadow: 0px 0px 3px -1px grey;
+      }
+      .chosen-items {
+        display: inline;
+      }
+      .chosen-items > li {
+        display: inline-block;
+      }
+      .chosen-items > li:hover {
+        text-decoration: line-through;
+      }
+      .error-banner {
+        color: white;
+        background: red;
+        border-radius: 4px;
+      }
+      .spinner {
+        height: 1rem;
+        position: relative;
+        top: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

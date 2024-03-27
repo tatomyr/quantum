@@ -1,0 +1,58 @@
+{
+  "counters": [
+    {
+      "value": 0,
+      "id": "my-counter"
+    }
+  ],
+  "items": [
+    {
+      "text": "trh",
+      "checked": false,
+      "id": 3
+    },
+    {
+      "text": "sim",
+      "checked": false,
+      "id": 5
+    },
+    {
+      "text": "devjaty",
+      "checked": false,
+      "id": 7
+    },
+    {
+      "text": "odhnadcyaty",
+      "checked": true,
+      "id": 9
+    },
+    {
+      "text": "first",
+      "checked": false,
+      "id": 10
+    },
+    {
+      "text": "second",
+      "checked": true,
+      "id": 11
+    },
+    {
+      "text": "first",
+      "checked": false,
+      "id": 12
+    },
+    {
+      "text": "second",
+      "checked": false,
+      "id": 13
+    },
+    {
+      "text": "third",
+      "checked": true,
+      "id": 15
+    }
+  ],
+  "counter": {
+    "count": -3
+  }
+}

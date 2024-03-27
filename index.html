@@ -1,0 +1,23 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Purity</title>
+    <script>
+      if (
+        !window.location.pathname.endsWith("/") &&
+        !window.location.pathname.endsWith(".html")
+      ) {
+        window.location.assign(window.location.pathname + "/")
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Purity</h1>
+    <a href="./playground/">Redirect to Playground</a>
+    <script>
+      window.location.pathname = `${window.location.pathname}playground/`
+    </script>
+  </body>
+</html>
